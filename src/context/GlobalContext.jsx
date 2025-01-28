@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
   }
 
   return (
-    <GlobalContext.Provider value={{ movies, fetchMovies, setQuery }}>
+    <GlobalContext.Provider value={{ movies, fetchMovies, query, setQuery }}>
       {children}
     </GlobalContext.Provider>
   )
