@@ -1,4 +1,4 @@
-const Card = (props) => {
+const CardMovie = (props) => {
 
   const imageError = (e) => {
     e.target.src = "/img/flag.png";
@@ -32,4 +32,4 @@ const Card = (props) => {
   )
 }
 
-export default Card
+export default CardMovie

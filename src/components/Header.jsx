@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Header = () => {
 
-  const { setQuery, fetchMovies } = useGlobalContext();
+  const { setQuery, fetchMovies, fetchTv } = useGlobalContext();
   const [inputChange, setInputChange] = useState("");
 
   const handleSubmit = (e) => {
@@ -27,7 +27,7 @@ const Header = () => {
             <button
               className="btn btn-outline-success"
               type="submit"
-              onClick={fetchMovies()}
+              onClick={() => { fetchMovies(); fetchTv(); }}
             >
               Search
             </button>
