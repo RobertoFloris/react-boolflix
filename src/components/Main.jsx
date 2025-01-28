@@ -10,7 +10,7 @@ const Main = () => {
   useEffect(() => {
     fetchMovies()
     fetchTv()
-  }, [])
+  }, [movies, tv])
 
   return (
     <main>
