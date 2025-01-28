@@ -3,17 +3,13 @@ import { useState, useEffect } from "react";
 
 const Header = () => {
 
-  const { query, setQuery, fetchMovies } = useGlobalContext();
+  const { setQuery, fetchMovies } = useGlobalContext();
   const [inputChange, setInputChange] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(inputChange);
   };
-
-  useEffect(() => {
-    fetchMovies();
-  }, [query]);
 
   return (
     <header>
@@ -28,7 +24,13 @@ const Header = () => {
               value={inputChange}
               onChange={(e) => setInputChange(e.target.value)}
             />
-            <button className="btn btn-outline-success" type="submit">Search</button>
+            <button
+              className="btn btn-outline-success"
+              type="submit"
+              onClick={fetchMovies()}
+            >
+              Search
+            </button>
           </form>
         </div>
       </nav>
