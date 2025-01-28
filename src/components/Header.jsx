@@ -1,16 +1,19 @@
 import { useGlobalContext } from "../context/GlobalContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
 
-  const { setQuery, fetchMovies } = useGlobalContext();
+  const { query, setQuery, fetchMovies } = useGlobalContext();
   const [inputChange, setInputChange] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setQuery(inputChange);
-    fetchMovies();
   };
+
+  useEffect(() => {
+    fetchMovies();
+  }, [query]);
 
   return (
     <header>

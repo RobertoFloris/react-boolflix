@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 const GlobalContext = createContext();
 
@@ -16,7 +16,7 @@ const GlobalProvider = ({ children }) => {
   }
 
   return (
-    <GlobalContext.Provider value={{ movies, fetchMovies, setQuery }}>
+    <GlobalContext.Provider value={{ movies, fetchMovies, query, setQuery }}>
       {children}
     </GlobalContext.Provider>
   )
