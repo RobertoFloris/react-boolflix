@@ -6,17 +6,17 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
   const [movies, setMovies] = useState([]);
+  const [query, setQuery] = useState(null)
 
   const fetchMovies = () => {
-    axios.get("https://api.themoviedb.org/3/search/movie?api_key=98f8a1f1d4b7b29908a11d1ce3814017&query=Inception")
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=98f8a1f1d4b7b29908a11d1ce3814017&query=${query}`)
       .then(res => {
-        console.log(res.data);
         setMovies(res.data)
       })
   }
 
   return (
-    <GlobalContext.Provider value={{ movies, fetchMovies }}>
+    <GlobalContext.Provider value={{ movies, fetchMovies, setQuery }}>
       {children}
     </GlobalContext.Provider>
   )
