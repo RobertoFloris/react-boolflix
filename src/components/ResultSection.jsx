@@ -7,11 +7,11 @@ const ResultSection = ({ title, film }) => {
         <h1>{title}</h1>
       </div>
       <div className="container">
-        <ul>
+        <div className="row">
           {film?.results?.map(item => (
             <Card key={item.id} item={item} />
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   )

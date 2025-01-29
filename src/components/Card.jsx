@@ -8,7 +8,15 @@ const Card = (props) => {
 
   const { item } = props;
   return (
-    <li>
+    <div className="col">
+      <div>
+        <img
+          src={`https://image.tmdb.org/t/p/w342/${item?.poster_path}`}
+          onError={imageError}
+          alt="IMG"
+          style={{ width: "342px", height: "450px" }}
+        />
+      </div>
       <div>
         <p>{item?.title || item?.name}</p>
       </div>
@@ -18,10 +26,10 @@ const Card = (props) => {
       <div>
         <img
           src={`https://flagsapi.com/${item?.original_language.toUpperCase() === "EN"
-              ? "GB"
-              : item?.original_language.toUpperCase() === "JA"
-                ? "JP"
-                : item?.original_language.toUpperCase()
+            ? "GB"
+            : item?.original_language.toUpperCase() === "JA"
+              ? "JP"
+              : item?.original_language.toUpperCase()
             }/flat/64.png`}
           onError={imageError}
           alt="flag"
@@ -32,7 +40,7 @@ const Card = (props) => {
       <div>
         <p> <Stars vote={Math.round((item?.vote_average) / 2)} />  </p>
       </div>
-    </li>
+    </div>
   )
 }
 

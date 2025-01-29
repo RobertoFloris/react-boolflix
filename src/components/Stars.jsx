@@ -12,9 +12,10 @@ const Stars = ({ vote }) => {
   }
 
   return (
-    <div>
+    <>
       {stars}
-    </div>)
+    </>
+  )
 };
 
 export default Stars;
