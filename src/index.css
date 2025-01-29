@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cardFilm {
+  position: relative;
+  width: 356px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background-color: black;
+}
+
+.headerNav {
+  background-color: black;
+
+  a {
+    font-size: 2rem;
+    color: red;
+  }
+}
+
+.listMovie {
+  color: white;
+}
+
+.wallpaper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main {
+  background-color: black;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cardFilm:hover .overlay {
+  opacity: 1;
+}
+
+.title,
+.originalTitle,
+.overview {
+  font-size: large;
+}
+
+.flag img {
+  width: 64px;
+  height: 64px;
+}
+
+.overview {
+  width: 90%;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.overview::-webkit-scrollbar {
+  width: 5px;
+}
+
+.overview::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.overview::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+}

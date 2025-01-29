@@ -14,21 +14,20 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="navbar bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand">BoolFlix</a>
+      <div className="container d-flex justify-content-around headerNav p-3">
+        <a className="navbar-brand">BoolFlix</a>
 
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyUp={handleKeyUp}
-          />
+        <input
+          className="form-control me-2"
+          type="search"
+          placeholder="Search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyUp={handleKeyUp}
+          style={{ maxWidth: "300px" }}
+        />
 
-        </div>
-      </nav>
+      </div>
     </header>
   );
 };

@@ -4,7 +4,7 @@ const ResultSection = ({ title, film }) => {
   return (
     <section>
       <div className="container text-center">
-        <h1>{title}</h1>
+        <h2 className="listMovie">{title}</h2>
       </div>
       <div className="container">
         <div className="row">
